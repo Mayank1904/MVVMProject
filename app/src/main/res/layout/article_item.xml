@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+    <data>
+            <variable name="data" type="com.xebiaassignment.model.MostViewedArticlesResponse.Result"/>
+    </data>
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_margin="5sp"
+            android:id="@+id/parentLayout"
+            android:background="@android:color/white"
+            android:layout_height="wrap_content"
+    >
+
+        <LinearLayout android:weightSum="2" android:layout_width="match_parent" android:layout_height="wrap_content"
+                      android:orientation="horizontal">
+            <de.hdodenhof.circleimageview.CircleImageView android:layout_width="0dp"
+                                                          android:src="@drawable/user"
+                                                          android:layout_gravity="center"
+                                                          android:padding="5dp"
+                                                          android:layout_height="match_parent"
+                                                          android:layout_weight="0.5"/>
+            <LinearLayout android:layout_marginStart="5dp" android:padding="10dp" android:layout_width="0dp"
+                          android:layout_height="match_parent" android:layout_weight="1.4"
+                          android:orientation="vertical" android:layout_marginLeft="10dp">
+                <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:maxLines="2"
+                          android:ellipsize="end" android:textStyle="bold"
+                          android:text="@{data.title}"
+                          android:id="@+id/articleTitle"/>
+                <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+                          android:id="@+id/byline" android:maxLines="1" android:ellipsize="end"
+                          android:text="@{data.byline}"/>
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                              android:orientation="horizontal">
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                              android:id="@+id/source" android:text="@{data.source}"/>
+                    <TextView android:layout_width="match_parent" android:gravity="end"
+                              android:layout_height="wrap_content"
+                              android:id="@+id/published_date" android:text="@{data.publishedDate}"/>
+                </LinearLayout>
+            </LinearLayout>
+            <ImageView android:layout_width="0dp" android:layout_height="match_parent"
+                       android:layout_weight="0.1"
+                       android:layout_gravity="center"
+                       android:src="@drawable/fwd_chevron"/>
+        </LinearLayout>
+
+    </LinearLayout>
+</layout>

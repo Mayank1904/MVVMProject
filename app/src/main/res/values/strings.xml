@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">XebiaAssignment</string>
+    <string name="title_articledetail_list">Items</string>
+    <string name="title_articledetail_detail">ArticleDetail Detail</string>
+</resources>
